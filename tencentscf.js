@@ -11,7 +11,7 @@ const clientConfig = {
     secretId: process.env.AKIDve7JFvKSJsBDySfbFcjY6NNBiyxf6G9l,
     secretKey: process.env.MREo79uObXBYfV3KL5YjfMmvnOilX2GD
   },
-  region: process.env.ap-guangzhou, // 区域参考，https://cloud.tencent.com/document/product/583/17299
+  region: process.env.ap-guangzhou,  // 区域参考，https://cloud.tencent.com/document/product/583/17299
   profile: {
     httpProfile: {
       endpoint: "scf.tencentcloudapi.com"
