@@ -1,4 +1,4 @@
-name: 1获取最新脚本
+name: wander
 on:
   schedule:
     - cron: '5 */3 * * *'
