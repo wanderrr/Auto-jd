@@ -13,7 +13,7 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
     env:
       TZ: Asia/Shanghai
-      JD_COOKIE: ${{ AAJhEAv8ADDOKLOcjc2toTaIgZ4QeYg6yaMEbJvno8ShqxCZKx28idfRg2jZjLab_pM99jY-Vtg;2rIDVJHZITrbXrUjzBWQTQ}}
+      JD_COOKIE: ${{ secrets.JD_COOKIE}}
       JD_DEBUG: ${{ secrets.JD_DEBUG}}
       JD_USER_AGENT: ${{ secrets.JD_USER_AGENT}}
       TENCENTSCF_SOURCE_TYPE: ${{ secrets.TENCENTSCF_SOURCE_TYPE}}
