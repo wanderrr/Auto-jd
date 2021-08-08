@@ -8,10 +8,10 @@ const MemorySize=process.env.TENCENT_MemorySize?(Number(process.env.TENCENT_Memo
 const ScfClient = tencentcloud.scf.v20180416.Client;
 const clientConfig = {
   credential: {
-    secretId: process.env.TENCENT_SECRET_ID,
-    secretKey: process.env.TENCENT_SECRET_KEY
+    secretId: AKIDve7JFvKSJsBDySfbFcjY6NNBiyxf6G9l,
+    secretKey: MREo79uObXBYfV3KL5YjfMmvnOilX2GD
   },
-  region: process.env.TENCENT_REGION, // 区域参考，https://cloud.tencent.com/document/product/583/17299
+  region: ap-guangzhou, // 区域参考，https://cloud.tencent.com/document/product/583/17299
   profile: {
     httpProfile: {
       endpoint: "scf.tencentcloudapi.com"
@@ -55,7 +55,7 @@ const sleep = ms => new Promise(res => setTimeout(res, ms));
         Code: {
           ZipFile: contents_in_base64
         },
-        FunctionName: process.env.TENCENT_FUNCTION_NAME,
+        FunctionName: JD,
         Runtime: "Nodejs12.16",
         MemorySize: MemorySize,
         Timeout: 18000,
