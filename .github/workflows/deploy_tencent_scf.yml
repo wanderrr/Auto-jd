@@ -200,11 +200,11 @@ jobs:
         env:
           STAGE: dev
           SERVERLESS_PLATFORM_VENDOR: tencent
-          TENCENT_SECRET_ID: ${{ AKIDve7JFvKSJsBDySfbFcjY6NNBiyxf6G9l }}
-          TENCENT_SECRET_KEY: ${{ MREo79uObXBYfV3KL5YjfMmvnOilX2GD }}
-          TENCENT_REGION: ${{ ap-guangzhou }}
-          TENCENT_FUNCTION_NAME: ${{ JD }}
-          TENCENT_MemorySize: ${{ 64 }}
+          TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
+          TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }}
+          TENCENT_REGION: ${{ secrets.SCF_REGION }}
+          TENCENT_FUNCTION_NAME: ${{ secrets.TENCENT_FUNCTION_NAME }}
+          TENCENT_MemorySize: ${{ secrets.TENCENT_MemorySize }}
         
       - name: "部署失败通知"
         run: node action.js
