@@ -26,7 +26,7 @@ const sleep = ms => new Promise(res => setTimeout(res, ms));
   await client.ListFunctions({}).then(
     async data => {
       let func = data.Functions.filter(
-        vo => vo.FunctionName === process.env.TENCENT_FUNCTION_NAME
+        vo => vo.FunctionName === process.env.JD
       );
       const file_buffer = fs.readFileSync("./myfile.zip");
       const contents_in_base64 = file_buffer.toString("base64");
@@ -34,7 +34,7 @@ const sleep = ms => new Promise(res => setTimeout(res, ms));
         console.log(`更新函数`);
         // 更新代码，删除后重建
         params = {
-          FunctionName: process.env.TENCENT_FUNCTION_NAME
+          FunctionName: process.env.JD
         };
         await client.DeleteFunction(params).then(
           data => {
@@ -154,7 +154,7 @@ const sleep = ms => new Promise(res => setTimeout(res, ms));
   let obj = yaml.load(fs.readFileSync(inputYML, { encoding: "utf-8" }));
   for (let vo of obj.inputs.events) {
     let param = {
-      FunctionName: process.env.TENCENT_FUNCTION_NAME,
+      FunctionName: process.env.JD,
       TriggerName: vo.timer.parameters.name,
       Type: "timer",
       TriggerDesc: vo.timer.parameters.cronExpression,
