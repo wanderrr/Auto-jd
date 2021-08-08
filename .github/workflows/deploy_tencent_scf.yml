@@ -13,7 +13,7 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
     env:
       TZ: Asia/Shanghai
-      JD_COOKIE: ${{ secrets.JD_COOKIE}}
+      JD_COOKIE: ${{ pt_key=7349160c-20a4-4770-91bd-1fd7d80a27ae;pt_pin=2rIDVJHZITrbXrUjzBWQTQ }}
       JD_DEBUG: ${{ secrets.JD_DEBUG}}
       JD_USER_AGENT: ${{ secrets.JD_USER_AGENT}}
       TENCENTSCF_SOURCE_TYPE: ${{ secrets.TENCENTSCF_SOURCE_TYPE}}
@@ -200,11 +200,11 @@ jobs:
         env:
           STAGE: dev
           SERVERLESS_PLATFORM_VENDOR: tencent
-          TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
-          TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }}
-          TENCENT_REGION: ${{ secrets.SCF_REGION }}
-          TENCENT_FUNCTION_NAME: ${{ secrets.TENCENT_FUNCTION_NAME }}
-          TENCENT_MemorySize: ${{ secrets.TENCENT_MemorySize }}
+          TENCENT_SECRET_ID: ${{ AKIDve7JFvKSJsBDySfbFcjY6NNBiyxf6G9l }}
+          TENCENT_SECRET_KEY: ${{ MREo79uObXBYfV3KL5YjfMmvnOilX2GD }}
+          TENCENT_REGION: ${{ ap-guangzhou }}
+          TENCENT_FUNCTION_NAME: ${{ JD }}
+          TENCENT_MemorySize: ${{ 64 }}
         
       - name: "部署失败通知"
         run: node action.js
